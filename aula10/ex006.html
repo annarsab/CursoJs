@@ -19,21 +19,28 @@
 </head>
 
 <body>
-  <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+  <div id="area">
     Interaja...
   </div>
   <script>
+    //deixar a variavel pro lado de fora faz com que eu acesse todas as funçoes, nao somente uma. Não é a melhor coisa a se fazer, devido ao uso de memória.
+
     var a = window.document.getElementById('area')
+    a.addEventListener('click', clicar)
+    a.addEventListener('mouseenter', entrar)
+    a.addEventListener('mouseout', sair)
+
     function clicar() {
       a.innerText = 'Clicou!'
       a.style.background = 'red'
     }
     function entrar() {
       a.innerText = 'Entrou!'
-      a.style.background = 'green'
+      a.style.background = 'purple'
     }
     function sair() {
       a.innerText = 'Saiu!'
+      a.style.background = 'blue'
     }
   </script>
 
